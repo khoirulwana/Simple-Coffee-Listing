@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
+/* Reset margin, padding, dan box-sizing untuk semua elemen */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Gaya umum untuk body */
 body {
   font-family: "DM Sans", sans-serif;
   text-align: center;
@@ -12,13 +15,15 @@ body {
   color: #fef7ee;
 }
 
+/* Gaya untuk kontainer utama */
 .main-container {
   width: 100%;
   height: 100vh;
   background-color: #111315;
-  padding: 200px 200px;
+  padding: 200px 100px;
 }
 
+/* Gaya untuk pembungkus gambar latar belakang */
 .bg-wrapper {
   width: 100%;
   height: 300px;
@@ -32,13 +37,16 @@ body {
   height: 100%;
 }
 
+/* Gaya untuk bagian konten */
 .contents {
+  width: 100%;
+  height: 100%;
   background-color: #1b1d1f;
   position: relative;
   margin-top: -80px;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
+  padding: 10px 120px 50px 120px;
   border-radius: 15px;
   z-index: 2;
 }
@@ -46,6 +54,8 @@ body {
 .contents h1 {
   position: relative;
   z-index: 3;
+  font-size: 2rem;
+  margin-top: 60px;
 }
 
 .line-vector {
@@ -53,6 +63,7 @@ body {
   z-index: 1;
 }
 
+/* Gaya untuk paragraf pengantar */
 .intro {
   width: 50%;
   margin-left: auto;
@@ -60,8 +71,11 @@ body {
   color: #6f757c;
   position: relative;
   z-index: 3;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
+/* Gaya untuk tombol sortir */
 .sort-button {
   display: flex;
   justify-content: center;
@@ -71,37 +85,129 @@ body {
   z-index: 3;
 }
 
-.sort-button .sorted {
-  background-color: #6f757c;
-  padding: 6px 8px;
-  border-radius: 10px;
-  margin: 10px 0;
+.sort-button button {
+  color: #fef7ee;
+  border: none;
+  width: 90px;
+  height: 35px;
+  padding: 5px;
+  border-radius: 15px;
 }
 
+.sort-button button:hover {
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+/* Gaya untuk daftar kopi grid */
 .coffee-list {
+  width: 100%;
+  height: 100%;
   display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  row-gap: 80px;
+  column-gap: 30px;
+  margin-top: 100px;
+  align-content: center;
+  justify-items: center;
 }
 
+/* Gaya untuk item kopi individual */
+.coffee {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.coffee img {
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.popular-text {
+  background-color: #f6c768;
+  color: #1b1d1f;
+  padding: 5px 10px;
+  border-radius: 15px;
+  position: absolute;
+  margin: 10px auto 0 10px;
+  font-size: 0.625rem;
+}
+
+/* Gaya untuk bagian nama dan harga */
 .name-price {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 }
 
+.name-price .price {
+  background-color: #bee3cc;
+  color: #111315;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+}
+
+/* Gaya untuk bagian rating dan votes */
 .rating-votes {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: left;
+  gap: 5px;
 }
 
-.star-icon {
-  width: 100px;
-  height: 100px;
+.rating-votes p:nth-child(3) {
+  font-size: 0.875rem;
+  color: #6f757c;
 }
 
+.rating-votes .star-icon {
+  width: 20px; /* Mengatur lebar gambar bintang */
+  height: 20px; /*Mengatur tinggi gambar bintang */
+}
+
+.sold-out-text {
+  color: #ed735d;
+  margin-left: 90px;
+}
+
+/* Gaya responsif */
+
+@media (max-width: 640px) {
+  .main-container {
+    padding: 0;
+  }
+  .contents {
+    width: 100%;
+  }
+  .coffee-list {
+    grid-template-columns: 1fr;
+  }
+  .coffee {
+    width: 100%;
+    height: auto;
+  }
+  .intro {
+    width: 90%;
+  }
+}
+/*
 @media screen and (min-width: 640px) {
   .coffee-list {
     grid-template-columns: 1fr;
+  }
+  .coffee {
+    width: 100%;
+    height: auto;
+  }
+  .intro {
+    width: 80%;
   }
 }
 
@@ -116,3 +222,4 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+*/
