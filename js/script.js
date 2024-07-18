@@ -135,6 +135,8 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       const noRatingText = document.createElement("p");
       noRatingText.textContent = "No Ratings";
+      noRatingText.style.fontSize = "0.875rem";
+      noRatingText.style.color = "#6f757c";
       container.appendChild(noRatingText);
     }
 

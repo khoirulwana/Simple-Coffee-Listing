@@ -17,19 +17,16 @@ body {
 
 /* Gaya untuk kontainer utama */
 .main-container {
-  width: 100%;
-  height: 100vh;
   background-color: #111315;
   padding: 200px 100px;
 }
 
 /* Gaya untuk pembungkus gambar latar belakang */
 .bg-wrapper {
-  width: 100%;
-  height: 300px;
   position: absolute;
   top: 0;
   left: 0;
+  margin: 0;
 }
 
 .bg-img {
@@ -39,8 +36,6 @@ body {
 
 /* Gaya untuk bagian konten */
 .contents {
-  width: 100%;
-  height: 100%;
   background-color: #1b1d1f;
   position: relative;
   margin-top: -80px;
@@ -48,7 +43,7 @@ body {
   margin-right: auto;
   padding: 10px 120px 50px 120px;
   border-radius: 15px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .contents h1 {
@@ -65,14 +60,12 @@ body {
 
 /* Gaya untuk paragraf pengantar */
 .intro {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 80% !important;
+  margin: 15px auto;
   color: #6f757c;
   position: relative;
   z-index: 3;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 /* Gaya untuk tombol sortir */
@@ -88,10 +81,10 @@ body {
 .sort-button button {
   color: #fef7ee;
   border: none;
-  width: 90px;
+  width: 100px;
   height: 35px;
   padding: 5px;
-  border-radius: 15px;
+  border-radius: 12px;
 }
 
 .sort-button button:hover {
@@ -101,24 +94,21 @@ body {
 
 /* Gaya untuk daftar kopi grid */
 .coffee-list {
-  width: 100%;
-  height: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 2fr);
+  grid-template-columns: repeat(3, 1fr);
   row-gap: 80px;
-  column-gap: 30px;
-  margin-top: 100px;
+  column-gap: 0;
   align-content: center;
   justify-items: center;
+  margin-top: 40px;
 }
 
 /* Gaya untuk item kopi individual */
 .coffee {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 90%;
 }
 
 .coffee img {
@@ -159,7 +149,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  gap: 5px;
+  gap: 3px;
 }
 
 .rating-votes p:nth-child(3) {
@@ -174,52 +164,59 @@ body {
 
 .sold-out-text {
   color: #ed735d;
-  margin-left: 90px;
+  margin-left: 20%;
+  font-size: 0.875rem;
 }
 
 /* Gaya responsif */
 
-@media (max-width: 640px) {
+@media (max-width: 640px), (min-width: 640px) {
   .main-container {
-    padding: 0;
+    padding: 200px 10px;
   }
+
+  /* .line-vector {
+    width: 50%;
+  } */
+
+  .coffee-list {
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+  }
+
   .contents {
-    width: 100%;
   }
-  .coffee-list {
-    grid-template-columns: 1fr;
-  }
+
   .coffee {
     width: 100%;
-    height: auto;
   }
   .intro {
-    width: 90%;
+    width: 30%;
   }
-}
-/*
-@media screen and (min-width: 640px) {
-  .coffee-list {
-    grid-template-columns: 1fr;
+
+  .contents h1 {
+    margin-top: 40px;
   }
-  .coffee {
-    width: 100%;
-    height: auto;
-  }
-  .intro {
-    width: 80%;
+
+  .sold-out-text {
+    margin-left: 55%;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .coffee-list {
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 5%;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .coffee-list {
     grid-template-columns: repeat(3, 1fr);
+    column-gap: 5%;
+  }
+
+  .sold-out-text {
+    margin-left: 40%;
   }
 }
-*/
